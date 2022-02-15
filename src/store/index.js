@@ -73,7 +73,6 @@ export default createStore({
   actions: {
 
     runWorkTimer({ state, dispatch }) {
-      //state.workTimeLeft = state.workTimeLeftHolder; 
       state.viewDisplayed = 'workTimer';
       state.workTimerIsRunning = true;
       if (!state.workTimer) {
@@ -92,8 +91,7 @@ export default createStore({
     stopWorkTimer(commit) {
       commit('pauseWorkTimer');
     },
-    runBreakTimer({ state, dispatch }) {
-      //state.breakTimeLeft = state.breakTimeLeftHolder; 
+    runBreakTimer({ state, dispatch }) { 
       state.viewDisplayed = 'breakTimer';
       state.breakTimerIsRunning = true;
       if (!state.breakTimer) {

@@ -50,11 +50,11 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 #countdown {
-  font-family: "Cutive Mono", sans-serif;
-  font-size: 48px;
+  font-family: "VT323", sans-serif;
+  font-size: 100px;
   margin: 20px 0 20px 0;
 }
 Button {
