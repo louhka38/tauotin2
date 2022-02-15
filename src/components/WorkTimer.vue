@@ -1,14 +1,13 @@
 <template>
-    <div class="static bg-blue-100 p-4 border-round">
-      <div class="timeDisplay">
-        <h3>Seuraavaan taukoon:</h3>
-        <span id="countdown">{{ workTimerDisplay() }}</span><br>
-        <Button v-if="workTimerIsRunning" label="Pause" class="p-button-rounded p-button-danger" @click="pauseWorkTimer"/>
-        <Button v-if="!workTimerIsRunning" label="Start" class="p-button-rounded p-button-success" @click="runWorkTimer"/>
-        <Button label="Takaisin" class="p-button-rounded p-button-warning" @click="returnToSetup"/>
-      </div>
-        
-    </div>
+  <div class="static p-4 border-round">
+    <div class="timeDisplay">
+      <h3>Seuraavaan taukoon:</h3>
+      <span id="countdown">{{ workTimerDisplay() }}</span><br><br>
+      <Button v-if="workTimerIsRunning" label="Pause" class="p-button-rounded p-button-danger" @click="pauseWorkTimer"/>
+      <Button v-if="!workTimerIsRunning" label="Start" class="p-button-rounded p-button-success" @click="runWorkTimer"/>
+      <Button label="Takaisin" class="p-button-rounded p-button-warning" @click="returnToSetup"/>
+    </div>  
+  </div> 
 </template>
 
 <script>
@@ -51,24 +50,14 @@ export default {
 </script>
 
 <style scoped>
-/*.timeDisplay {
-    margin: 0 auto;
-    padding: 50px;
-    display: block;
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 10px 10px -5px #909090;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}*/
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 #countdown {
+  font-family: "Cutive Mono", sans-serif;
   font-size: 48px;
   margin: 20px 0 20px 0;
+}
+Button {
+  margin: 0 10px 0 10px;
 }
 </style>

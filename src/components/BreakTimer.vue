@@ -1,13 +1,13 @@
 <template>
-    <div class="static bg-blue-100 p-4 border-round">
-      <div class="timeDisplay">
-        <h3>Taukoa jäljellä:</h3>
-        <span id="countdown">{{ breakTimerDisplay() }}</span><br>
-        <Button v-if="breakTimerIsRunning" label="Pause" class="p-button-rounded p-button-danger" @click="pauseBreakTimer"/>
-        <Button v-if="!breakTimerIsRunning" label="Start" class="p-button-rounded p-button-success" @click="runBreakTimer"/>
-        <Button label="Takaisin" class="p-button-rounded p-button-warning" @click="returnToSetup"/>
-      </div>  
-    </div>
+  <div class="static p-4 border-round">
+    <div class="timeDisplay">
+      <h3>Taukoa jäljellä:</h3>
+      <span id="countdown">{{ breakTimerDisplay() }}</span><br><br>
+      <Button v-if="breakTimerIsRunning" label="Pause" class="p-button-rounded p-button-danger" @click="pauseBreakTimer"/>
+      <Button v-if="!breakTimerIsRunning" label="Start" class="p-button-rounded p-button-success" @click="runBreakTimer"/>
+      <Button label="Takaisin" class="p-button-rounded p-button-warning" @click="returnToSetup"/>
+    </div>  
+  </div>
 </template>
 
 <script>
@@ -51,9 +51,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 #countdown {
+  font-family: "Cutive Mono", sans-serif;
   font-size: 48px;
   margin: 20px 0 20px 0;
 }
+Button {
+  margin: 0 10px 0 10px;
+}
+
 </style>
