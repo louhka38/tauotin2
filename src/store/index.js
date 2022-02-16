@@ -1,4 +1,5 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import router from '../router/index';
 
 export default createStore({
   state: {
@@ -66,14 +67,16 @@ export default createStore({
       
       state.workTimerIsRunning = false;
       state.breakTimerIsRunning = false;
-      state.viewDisplayed = 'setupTimer';
+      state.viewDisplayed = "setupTimer"; 
+      router.push( { name: 'setup-timer' });
       
     }
   },
   actions: {
 
     runWorkTimer({ state, dispatch }) {
-      state.viewDisplayed = 'workTimer';
+      state.viewDisplayed = "workTimer"; 
+      router.push( { name: 'work-timer' });
       state.workTimerIsRunning = true;
       if (!state.workTimer) {
         state.workTimer = setInterval( () => {
@@ -91,8 +94,9 @@ export default createStore({
     stopWorkTimer(commit) {
       commit('pauseWorkTimer');
     },
-    runBreakTimer({ state, dispatch }) { 
-      state.viewDisplayed = 'breakTimer';
+    runBreakTimer({ state, dispatch }) {
+      state.viewDisplayed = "breakTimer";  
+      router.push( { name: 'break-timer' });
       state.breakTimerIsRunning = true;
       if (!state.breakTimer) {
         state.breakTimer = setInterval( () => {

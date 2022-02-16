@@ -51,7 +51,6 @@ export default {
   mounted() {
     this.workTimeInput = this.getWorkTime;
     this.breakTimeInput = this.getBreakTime;
-    console.log(this.getWorkTime)
   },
   watch: {
     workTimeChosen() {
