@@ -75,7 +75,6 @@ export default createStore({
   actions: {
 
     runWorkTimer({ state, dispatch }) {
-      state.workTimeLeft = state.workTimeLeftHolder;
       state.viewDisplayed = "workTimer"; 
       router.push( { name: 'work-timer' });
       state.workTimerIsRunning = true;
@@ -88,6 +87,7 @@ export default createStore({
             clearInterval(state.workTimer);
             state.workTimer = null;
             dispatch('runBreakTimer');
+            state.workTimeLeft = state.workTimeLeftHolder;
           }
         }, 1000);
       }
@@ -96,7 +96,6 @@ export default createStore({
       commit('pauseWorkTimer');
     },
     runBreakTimer({ state, dispatch }) {
-      state.breakTimeLeft = state.breakTimeLeftHolder; 
       state.viewDisplayed = "breakTimer";  
       router.push( { name: 'break-timer' });
       state.breakTimerIsRunning = true;
@@ -109,6 +108,7 @@ export default createStore({
             clearInterval(state.breakTimer);
             state.breakTimer = null;
             dispatch('runWorkTimer');
+            state.breakTimeLeft = state.breakTimeLeftHolder; 
           }
         }, 1000);
       }
